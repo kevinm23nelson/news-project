@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <h1>Top Business News</h1>
       </header>
-      <NewsList /> {/* Render NewsList component */}
+      <NewsList />
     </div>
   );
 }

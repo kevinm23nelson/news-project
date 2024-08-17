@@ -1,31 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { fetchNewsData } from '../../utils/apiCalls';
-import NewsCard from '../NewsCard/NewsCard';
+import React, { useState, useEffect } from 'react';
+import './NewsList.css';
+import placeholderImage from '../../Images/NewsImage.jpg';
+import mockNews from '../../MockData/MockData';
 
 function NewsList() {
   const [newsArticles, setNewsArticles] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const getNews = async () => {
-      try {
-        const articles = await fetchNewsData();
-        setNewsArticles(articles);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-    getNews();
+    try {
+      // Use mockNews instead of fetching from an API
+      setNewsArticles(mockNews);
+    } catch (error) {
+      setError('Failed to load news data. Please try again later.');
+    }
   }, []);
 
   if (error) {
-    return <p>Error loading news: {error}</p>;
+    return <p className="error-message">Error loading news: {error}</p>;
   }
 
   return (
     <div className="news-list">
       {newsArticles.map((article, index) => (
-        <NewsCard key={index} article={article} />
+        <div key={index} className="news-card">
+          <img
+            src={article.urlToImage || placeholderImage}
+            alt={article.title}
+            className="news-image"
+          />
+          <div className="news-details">
+            <h2 className="news-title">{article.title}</h2>
+            <p className="news-date">{new Date(article.publishedAt).toLocaleDateString()}</p>
+            <p className="news-source">{article.source.name}</p>
+          </div>
+        </div>
       ))}
     </div>
   );
