@@ -5,7 +5,7 @@ import mockNews from '../../MockData/MockData';
 
 function NewsList({ searchQuery }) {
   const [newsArticles, setNewsArticles] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     try {
@@ -20,8 +20,16 @@ function NewsList({ searchQuery }) {
     (article.description && article.description.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
-  if (error) {
-    return <p className="error-message">Error loading news: {error}</p>;
+  useEffect(() => {
+    if (searchQuery && filteredArticles.length === 0) {
+      setError('Your search did not yield any results.');
+    } else {
+      setError('');
+    }
+  }, [searchQuery, filteredArticles]);
+
+  if (error && filteredArticles.length === 0) {
+    return <p className="error-message">{error}</p>;
   }
 
   return (
