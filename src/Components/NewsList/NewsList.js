@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './NewsList.css';
 import placeholderImage from '../../Images/NewsImage.jpg';
 import mockNews from '../../MockData/MockData';
@@ -35,19 +36,21 @@ function NewsList({ searchQuery }) {
   return (
     <div className="news-list">
       {filteredArticles.map((article, index) => (
-        <div key={index} className="news-card">
-          <img
-            src={article.urlToImage || placeholderImage}
-            alt={article.title}
-            className="news-image"
-          />
-          <div className="news-details">
-            <h2 className="news-title">{article.title}</h2>
-            <p className="news-description">{article.description}</p>
-            <p className="news-date">{new Date(article.publishedAt).toLocaleDateString()}</p>
-            <p className="news-source">{article.source.name}</p>
+        <Link key={index} to={`/article/${index}`} className="news-card-link">
+          <div className="news-card">
+            <img
+              src={article.urlToImage || placeholderImage}
+              alt={article.title}
+              className="news-image"
+            />
+            <div className="news-details">
+              <h2 className="news-title">{article.title}</h2>
+              <p className="news-description">{article.description}</p>
+              <p className="news-date">{new Date(article.publishedAt).toLocaleDateString()}</p>
+              <p className="news-source">{article.source.name}</p>
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
