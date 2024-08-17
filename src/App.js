@@ -17,10 +17,19 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <SearchBar handleSearch={handleSearch} />
         <Routes>
-          <Route path="/" element={<NewsList searchQuery={searchQuery} />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchBar handleSearch={handleSearch} />
+                <NewsList searchQuery={searchQuery} />
+              </>
+            }
+          />
           <Route path="/article/:id" element={<DetailedNews />} />
+          {/* You can add a NotFound route here if you want to handle non-existing routes */}
+          <Route path="*" element={<div>Page Not Found</div>} />
         </Routes>
       </div>
     </Router>

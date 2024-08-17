@@ -40,3 +40,20 @@
     font-size: 14px;
     color: #888;
   }
+
+  /* NewsList.css */
+.news-card-link {
+  text-decoration: none;
+  color: inherit; /* This ensures the text color is not changed by the link */
+}
+
+.news-card-link:hover .news-title {
+  text-decoration: underline; /* Optional: add underline on hover */
+}
+
+.news-card-link .news-title,
+.news-card-link .news-description,
+.news-card-link .news-date,
+.news-card-link .news-source {
+  color: inherit; /* Ensures the text color is consistent */
+}
