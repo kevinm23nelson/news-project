@@ -3,18 +3,22 @@ import './NewsList.css';
 import placeholderImage from '../../Images/NewsImage.jpg';
 import mockNews from '../../MockData/MockData';
 
-function NewsList() {
+function NewsList({ searchQuery }) {
   const [newsArticles, setNewsArticles] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     try {
-      // Use mockNews instead of fetching from an API
       setNewsArticles(mockNews);
     } catch (error) {
       setError('Failed to load news data. Please try again later.');
     }
   }, []);
+
+  const filteredArticles = newsArticles.filter(article =>
+    article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (article.description && article.description.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
 
   if (error) {
     return <p className="error-message">Error loading news: {error}</p>;
@@ -22,7 +26,7 @@ function NewsList() {
 
   return (
     <div className="news-list">
-      {newsArticles.map((article, index) => (
+      {filteredArticles.map((article, index) => (
         <div key={index} className="news-card">
           <img
             src={article.urlToImage || placeholderImage}
@@ -31,6 +35,7 @@ function NewsList() {
           />
           <div className="news-details">
             <h2 className="news-title">{article.title}</h2>
+            <p className="news-description">{article.description}</p>
             <p className="news-date">{new Date(article.publishedAt).toLocaleDateString()}</p>
             <p className="news-source">{article.source.name}</p>
           </div>

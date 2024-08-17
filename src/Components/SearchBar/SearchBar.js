@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import './SearchBar.css';
 
-function SearchBar() {
+function SearchBar({ handleSearch }) {
   return (
-    <div>SearchBar</div>
-  )
+    <div className="search-bar">
+      <input
+        type="text"
+        placeholder="Search for articles..."
+        onChange={(e) => handleSearch(e.target.value)}
+      />
+    </div>
+  );
 }
 
-export default SearchBar
+export default SearchBar;

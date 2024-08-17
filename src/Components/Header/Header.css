@@ -1,0 +1,8 @@
+.news-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(150, 150, 150);
+    height: 4em;
+    text-align: center;
+}

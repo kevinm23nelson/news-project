@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import NewsList from './Components/NewsList/NewsList';
+import Header from './Components/Header/Header';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Top Business News</h1>
-      </header>
-      <NewsList />
+      <Header />
+      <SearchBar handleSearch={handleSearch} />
+      <NewsList searchQuery={searchQuery} />
     </div>
   );
 }
