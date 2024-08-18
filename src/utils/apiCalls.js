@@ -1,4 +1,4 @@
-const apiKey = process.env.REACT_APP_NEWS_API_KEY; // Access the API key from the environment variables
+const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 const apiUrl = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${apiKey}`;
 
 export const fetchNewsData = async () => {
@@ -8,9 +8,9 @@ export const fetchNewsData = async () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    return data.articles; // Return only the articles array
+    return data.articles;
   } catch (error) {
     console.error('Error fetching news data:', error);
-    throw new Error('Oops! The news elves are on vacation. Please try again later!');
+    throw new Error('Error getting your articles, please try again later.');
   }
 };
