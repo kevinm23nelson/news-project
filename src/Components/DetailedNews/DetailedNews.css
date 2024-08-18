@@ -56,7 +56,9 @@
   border-radius: 4px;
   font-size: 1em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .details-link-button:hover {
@@ -73,7 +75,9 @@
   border-radius: 4px;
   font-size: 1em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .news-details-back-button:hover {

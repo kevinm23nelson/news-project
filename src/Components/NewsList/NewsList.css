@@ -88,7 +88,6 @@
   }
 }
 
-/* Mobile styles */
 @media (max-width: 480px) {
   .news-list {
     justify-content: center;
@@ -96,7 +95,7 @@
 
   .news-card {
     width: 100%;
-    max-width: 300px; /* Ensure cards don't get too wide on very narrow screens */
+    max-width: 300px;
     margin: 0.5rem 0;
   }
 
