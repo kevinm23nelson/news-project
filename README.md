@@ -41,13 +41,13 @@ To run this project locally, follow these steps:
 13. **Enjoy Viewing News-Project!**
 
 ## Challenges
-Handling asynchronous data fetching and ensuring the application state is updated correctly.
-Implementing robust Cypress tests to ensure the reliability of core functionalities.
-Dynamic styling based on real-time data changes and ensuring CSS classes are applied correctly.
+- Handling asynchronous data fetching and ensuring the application state is updated correctly.
+- Implementing robust Cypress tests to ensure the reliability of core functionalities.
+- Dynamic styling based on real-time data changes and ensuring CSS classes are applied correctly.
 
 ## Wins
-Successfully integrated Cypress for end-to-end testing, enhancing the reliability of the application.
-Developed a responsive design that works well across various devices, ensuring accessibility for all users.
+- Successfully integrated Cypress for end-to-end testing, enhancing the reliability of the application.
+- Developed a responsive design that works well across various devices, ensuring accessibility for all users.
 
 ## Screenshots:
 Multiple Screen Sizes
