@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './DetailedNews.css';
 import placeholderImage from '../../Images/NewsImage.jpg';
-import mockNews from '../../MockData/MockData';
+import { fetchNewsData } from '../../utils/apiCalls';
 
 function DetailedNews() {
   const { id } = useParams();
-  const article = mockNews[parseInt(id)];
+  const [article, setArticle] = useState(null);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const getArticle = async () => {
+      try {
+        const articles = await fetchNewsData();
+        const fetchedArticle = articles[parseInt(id)];
+        if (fetchedArticle) {
+          setArticle(fetchedArticle);
+        } else {
+          setError('Article not found.');
+        }
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    getArticle();
+  }, [id]);
+
+  if (error) {
+    return <p className="error-message">{error}</p>;
+  }
+
+  if (!article) {
+    return <p className="loading-message">Loading...</p>;
+  }
 
   return (
     <div className="article-details-container">
@@ -20,8 +47,8 @@ function DetailedNews() {
       <p className="details-date">{new Date(article.publishedAt).toLocaleDateString()}</p>
       <p className="details-content">{article.content}</p>
       <div className="button-container">
-        <Link to="/" className="news-details-button">Back To Home</Link>
-        <a href={article.url} className="details-link" target="_blank" rel="noopener noreferrer">
+        <Link to="/" className="news-details-back-button">Back To Home</Link>
+        <a href={article.url} className="details-link-button" target="_blank" rel="noopener noreferrer">
           Read more
         </a>
       </div>

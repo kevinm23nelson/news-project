@@ -2,18 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './NewsList.css';
 import placeholderImage from '../../Images/NewsImage.jpg';
-import mockNews from '../../MockData/MockData';
+import { fetchNewsData } from '../../utils/apiCalls';
 
 function NewsList({ searchQuery }) {
   const [newsArticles, setNewsArticles] = useState([]);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    try {
-      setNewsArticles(mockNews);
-    } catch (error) {
-      setError('Failed to load news data. Please try again later.');
-    }
+    const getNews = async () => {
+      try {
+        const articles = await fetchNewsData();
+        setNewsArticles(articles);
+      } catch (error) {
+        setError('Failed to load news data. Please try again later.');
+      }
+    };
+
+    getNews();
   }, []);
 
   const filteredArticles = newsArticles.filter(article =>
@@ -31,6 +36,10 @@ function NewsList({ searchQuery }) {
 
   if (error && filteredArticles.length === 0) {
     return <p className="error-message">{error}</p>;
+  }
+
+  if (newsArticles.length === 0 && !error) {
+    return <p className="loading-message">Loading...</p>;
   }
 
   return (

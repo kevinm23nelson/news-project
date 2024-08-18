@@ -5,6 +5,7 @@ import NewsList from './Components/NewsList/NewsList';
 import Header from './Components/Header/Header';
 import SearchBar from './Components/SearchBar/SearchBar';
 import DetailedNews from './Components/DetailedNews/DetailedNews';
+import NotFoundPage from './Components/NotFoundPage/NotFoundPage';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -28,8 +29,8 @@ function App() {
             }
           />
           <Route path="/article/:id" element={<DetailedNews />} />
-          {/* You can add a NotFound route here if you want to handle non-existing routes */}
-          <Route path="*" element={<div>Page Not Found</div>} />
+          <Route path="/404" element={<NotFoundPage />} /> {}
+          <Route path="*" element={<NotFoundPage />} /> {/* Catch-all route for 404 errors */}
         </Routes>
       </div>
     </Router>
