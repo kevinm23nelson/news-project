@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# News-Project
+News-Project is a web application designed to help users explore up to date news articles. Users may search for a specific news article and click on individual articles for a more detailed view of the selected article.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+- View current and up to articles from a news api.
+- View detailed information about specific articles by clicking on them.
+- Search for a specific title, phrase, or letters within an article using the search bar feature.
+- News-Project
 
-## Available Scripts
+## Technologies Used
+- React
+- React Router
+- Cypress
+- JavaScript
+- HTML
+- CSS
+- Fetch API
 
-In the project directory, you can run:
+## Installation Instructions
+To run this project locally, follow these steps:
 
-### `npm start`
+1. **Clone the repository**
+    by running ```git clone https://github.com/kevinm23nelson/news-project```
+2. **Navigate into the project directory**
+   by running ```cd news-project```
+3. **Install dependencies**
+    by running ```npm install```
+4. **Start the development server**
+    by running ```npm start```
+5. **To Install Cypress Testing**
+    by running ```npm install cypress --save-dev```
+6. **To Run Cypress Testing**
+    by running ```npx cypress open```
+8. **Enjoy Viewing News-Project!**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Challenges
+Handling asynchronous data fetching and ensuring the application state is updated correctly.
+Implementing robust Cypress tests to ensure the reliability of core functionalities.
+Dynamic styling based on real-time data changes and ensuring CSS classes are applied correctly.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Wins
+Successfully integrated Cypress for end-to-end testing, enhancing the reliability of the application.
+Developed a responsive design that works well across various devices, ensuring accessibility for all users.
 
-### `npm test`
+## Screenshots:
+Multiple Screen Sizes
+### Desktop View
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="1477" alt="Screenshot 2024-08-17 at 10 40 09 PM" src="https://github.com/user-attachments/assets/b1b3db09-f4c0-4acb-bb02-5ce9ac1c09b0">
 
-### `npm run build`
+### Tablet View
+<img width="620" alt="Screenshot 2024-08-17 at 10 39 22 PM" src="https://github.com/user-attachments/assets/63b0c812-00c8-459f-9564-e09012804fe6">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Mobile View
+<img width="536" alt="Screenshot 2024-08-17 at 10 39 01 PM" src="https://github.com/user-attachments/assets/d13264a4-749c-4fc4-a06e-877f6a142e89">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Lighthouse Score and Accessibility
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="1487" alt="Screenshot 2024-08-17 at 10 37 28 PM" src="https://github.com/user-attachments/assets/4a629541-7bd7-4c13-8d92-e74af85f8366">
 
-### `npm run eject`
+<img width="1486" alt="Screenshot 2024-08-17 at 10 38 16 PM" src="https://github.com/user-attachments/assets/4ce3a428-a290-4917-88fb-f9e0c03b47cb">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgements
+- [Turing](https://turing.edu/) for education.
+- [React.dev](https://react.dev/) for React documentation.
+- [Cypress Docs](https://docs.cypress.io/) for Cypress training and documentation.
