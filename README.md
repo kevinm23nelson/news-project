@@ -20,18 +20,25 @@ News-Project is a web application designed to help users explore up to date news
 To run this project locally, follow these steps:
 
 1. **Clone the repository**
+   
     by running ```git clone https://github.com/kevinm23nelson/news-project```
-2. **Navigate into the project directory**
+3. **Navigate into the project directory**
+   
    by running ```cd news-project```
-3. **Install dependencies**
+5. **Install dependencies**
+   
     by running ```npm install```
-4. **Start the development server**
+7. **Start the development server**
+   
     by running ```npm start```
-5. **To Install Cypress Testing**
+9. **To Install Cypress Testing**
+    
     by running ```npm install cypress --save-dev```
-6. **To Run Cypress Testing**
+11. **To Run Cypress Testing**
+    
     by running ```npx cypress open```
-8. **Enjoy Viewing News-Project!**
+
+13. **Enjoy Viewing News-Project!**
 
 ## Challenges
 Handling asynchronous data fetching and ensuring the application state is updated correctly.
