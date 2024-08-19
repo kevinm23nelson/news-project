@@ -50,6 +50,9 @@ To run this project locally, follow these steps:
 - Developed a responsive design that works well across various devices, ensuring accessibility for all users.
 
 ## Screenshots:
+Figma Wireframe
+<img width="879" alt="Screenshot 2024-08-19 at 12 09 47 PM" src="https://github.com/user-attachments/assets/e8acd2a5-43d9-4946-a59c-8780afa0d4ff">
+
 Multiple Screen Sizes
 ### Desktop View
 
